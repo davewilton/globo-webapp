@@ -56,8 +56,8 @@ resource "aws_instance" "main" {
   user_data = templatefile("./templates/userdata.sh", {
     playbook_repository = var.playbook_repository
     secret_id           = var.api_key_secret_id
-    host_list_ssm_name  = aws_ssm_parameter.host_list.name
-    site_name_ssm_name  = aws_ssm_parameter.site_name.name
+    host_list_ssm_name  = local.host_list_ssm_name
+    site_name_ssm_name  = local.site_name_ssm_name
   })
 
 }
