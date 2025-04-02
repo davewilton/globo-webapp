@@ -47,3 +47,7 @@ variable "tfe_workspace" {
   description = "(Required) TFE workspace name."
 }
 
+variable "playbook_repository" {
+  type        = string
+  description = "(Required) URL of the playbook repository to execute on instance."
+}
